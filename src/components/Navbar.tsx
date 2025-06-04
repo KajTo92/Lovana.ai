@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Heart, MessageSquare, Menu, X, LogOut } from 'lucide-react';
+import { MessageSquare, Menu, X, LogOut } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 const Navbar = () => {
@@ -24,8 +24,7 @@ const Navbar = () => {
       <div className="container-custom py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <Heart className="w-8 h-8" />
-            <span className="text-2xl font-bold">Lovana.ai</span>
+            <img src="/src/assets/lovanaailogo.png" alt="Lovana.ai" className="h-8" />
           </Link>
 
           {/* Desktop Navigation */}
