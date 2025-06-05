@@ -47,6 +47,12 @@ const Navbar = () => {
             >
               Message Help
             </Link>
+            <Link
+              to="/first-message"
+              className={`font-medium transition-colors hover:text-white/80 ${isActive('/first-message') ? 'underline underline-offset-4' : ''}`}
+            >
+              First Message
+            </Link>
             <button
               onClick={handleLogout}
               className="flex items-center space-x-2 font-medium hover:text-white/80"
@@ -89,6 +95,13 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               Message Help
+            </Link>
+            <Link
+              to="/first-message"
+              className="block py-2 font-medium"
+              onClick={toggleMenu}
+            >
+              First Message
             </Link>
             <button
               onClick={handleLogout}
