@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Image, UserRound, MessageSquare } from 'lucide-react';
+import { Image, UserRound, MessageSquare, SendHorizonal } from 'lucide-react';
 import FeatureCard from '../components/FeatureCard';
 import ProfilePreview from '../components/ProfilePreview';
 
@@ -31,10 +31,10 @@ const HomePage = () => {
                   Analyze Your Profile
                 </Link>
                 <Link 
-                  to="/message-assistance" 
+                  to="/first-message" 
                   className="btn-primary bg-transparent border-2 border-white hover:bg-white/10"
                 >
-                  Get Message Help
+                  Create First Message
                 </Link>
               </div>
             </motion.div>
@@ -66,7 +66,7 @@ const HomePage = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <FeatureCard 
               icon={<Image size={40} />}
               title="Upload Profile Photos"
@@ -84,8 +84,16 @@ const HomePage = () => {
             />
             
             <FeatureCard 
+              icon={<SendHorizonal size={40} />}
+              title="Create First Message"
+              description="Generate engaging first messages based on your match's profile to start conversations."
+              buttonText="Get First Message"
+              linkTo="/first-message"
+            />
+            
+            <FeatureCard 
               icon={<MessageSquare size={40} />}
-              title="Upload Message Replies"
+              title="Message Assistance"
               description="Let our AI help you respond to matches with engaging conversation starters."
               buttonText="Get Message Help"
               linkTo="/message-assistance"
