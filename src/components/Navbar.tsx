@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { MessageSquare, Menu, X, LogOut, CreditCard } from 'lucide-react';
+import { MessageSquare, Menu, X, LogOut, Star, Sparkles } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 const Navbar = () => {
@@ -53,13 +53,17 @@ const Navbar = () => {
             >
               First Message
             </Link>
+            
+            {/* Premium Button */}
             <Link
               to="/pricing"
-              className={`font-medium transition-colors hover:text-white/80 flex items-center space-x-1 ${isActive('/pricing') ? 'underline underline-offset-4' : ''}`}
+              className="relative bg-gradient-to-r from-accent via-accent/90 to-accent/80 hover:from-accent/90 hover:via-accent/80 hover:to-accent/70 text-gray-900 font-semibold px-6 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center space-x-2 group"
             >
-              <CreditCard size={18} />
-              <span>Pricing</span>
+              <Sparkles size={18} className="group-hover:animate-pulse" />
+              <span>Go Premium</span>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
             </Link>
+            
             <button
               onClick={handleLogout}
               className="flex items-center space-x-2 font-medium hover:text-white/80"
@@ -110,13 +114,17 @@ const Navbar = () => {
             >
               First Message
             </Link>
+            
+            {/* Mobile Premium Button */}
             <Link
               to="/pricing"
-              className="block py-2 font-medium"
+              className="block bg-gradient-to-r from-accent via-accent/90 to-accent/80 text-gray-900 font-semibold px-4 py-3 rounded-lg transition-all duration-300 flex items-center space-x-2 w-fit"
               onClick={toggleMenu}
             >
-              Pricing
+              <Sparkles size={18} />
+              <span>Go Premium</span>
             </Link>
+            
             <button
               onClick={handleLogout}
               className="block w-full text-left py-2 font-medium"
