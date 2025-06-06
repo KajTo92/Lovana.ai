@@ -6,6 +6,7 @@ import BioAnalysisPage from './pages/BioAnalysisPage';
 import MessageAssistancePage from './pages/MessageAssistancePage';
 import FirstMessagePage from './pages/FirstMessagePage';
 import AuthPage from './pages/AuthPage';
+import PricingPage from './pages/PricingPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/auth" element={<AuthPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
           <Route path="/photo-analysis" element={<PhotoAnalysisPage />} />
           <Route path="/bio-analysis" element={<BioAnalysisPage />} />
           <Route path="/message-assistance" element={<MessageAssistancePage />} />

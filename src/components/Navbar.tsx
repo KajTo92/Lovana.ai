@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { MessageSquare, Menu, X, LogOut } from 'lucide-react';
+import { MessageSquare, Menu, X, LogOut, CreditCard } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 const Navbar = () => {
@@ -53,6 +53,13 @@ const Navbar = () => {
             >
               First Message
             </Link>
+            <Link
+              to="/pricing"
+              className={`font-medium transition-colors hover:text-white/80 flex items-center space-x-1 ${isActive('/pricing') ? 'underline underline-offset-4' : ''}`}
+            >
+              <CreditCard size={18} />
+              <span>Pricing</span>
+            </Link>
             <button
               onClick={handleLogout}
               className="flex items-center space-x-2 font-medium hover:text-white/80"
@@ -102,6 +109,13 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               First Message
+            </Link>
+            <Link
+              to="/pricing"
+              className="block py-2 font-medium"
+              onClick={toggleMenu}
+            >
+              Pricing
             </Link>
             <button
               onClick={handleLogout}
